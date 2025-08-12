@@ -49,10 +49,10 @@ async function sendLunchMessage(message) {
 }
 
 function scheduleLunchNotification() {
-  cron.schedule("0 14 * * 1-5", () => sendLunchMessage("Lunsj om 30 minutter! 🍽️"));
-  cron.schedule("10 14 * * 1-5", () => sendLunchMessage("Lunsj om 20 minutter! 🍽️"));
-  cron.schedule("20 14 * * 1-5", () => sendLunchMessage("Lunsj om 10 minutter! 🍽️"));
-  cron.schedule("30 14 * * 1-5", () => sendLunchMessage("Det er på tide for lunsj! 🍽️"));
+  cron.schedule("0 11 * * 1-5", () => sendLunchMessage("Lunsj om 30 minutter! 🍽️"));
+  cron.schedule("10 11 * * 1-5", () => sendLunchMessage("Lunsj om 20 minutter! 🍽️"));
+  cron.schedule("20 11 * * 1-5", () => sendLunchMessage("Lunsj om 10 minutter! 🍽️"));
+  cron.schedule("30 11 * * 1-5", () => sendLunchMessage("Det er på tide for lunsj! 🍽️"));
 }
 
 module.exports = { scheduleLunchNotification };
