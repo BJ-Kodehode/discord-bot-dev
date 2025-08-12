@@ -1,3 +1,6 @@
 .env
 stats.json
 node_modules/
+DOCKERFILE
+docker-compose.yml
+main.tf
