@@ -15,7 +15,7 @@ env:
   # Repo link: https://github.com/LarsGJobloop/nix-devcontainer-example
   # Hardcoded to reduce inline bash scripting.
   REGISTRY: ghcr.io
-  
+  IMAGE_PREFIX: ghcr.io/BJ-Kodehode/discord-bot-dev  
 
 jobs:
   # This job is used to build and push the changes detected in the changes job.
@@ -48,7 +48,7 @@ jobs:
         id: build-push
         # Mind the platforms here, they are to support both amd64 and arm64 development platforms.
         run: |
-          IMAGE="discord-bot"
+          IMAGE="${{env.IMAGE_PREFIX}}/discord-bot"
           docker buildx build \
             --platform linux/amd64,linux/arm64 \
             --push \
