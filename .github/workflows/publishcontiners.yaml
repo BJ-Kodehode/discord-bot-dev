@@ -48,7 +48,7 @@ jobs:
         id: build-push
         # Mind the platforms here, they are to support both amd64 and arm64 development platforms.
         run: |
-          IMAGE="${{env.IMAGE_PREFIX}}/discord-bot"
+          IMAGE="ghcr.io/bj-kodehode/discord-bot-dev/discord-bot"
           docker buildx build \
             --platform linux/amd64,linux/arm64 \
             --push \
