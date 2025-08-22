@@ -4,6 +4,12 @@ FROM node:22-alpine
 # Sett arbeidskatalog i containeren
 WORKDIR /app
 
+# Installer tzdata og sett tidssone til Europe/Oslo
+RUN apk add --no-cache tzdata \
+	&& cp /usr/share/zoneinfo/Europe/Oslo /etc/localtime \
+	&& echo "Europe/Oslo" > /etc/timezone \
+	&& apk del tzdata
+
 # Kopier package.json og låsfil for å kunne installere dependencies
 COPY package.json package-lock.json ./
 
